@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사 폼 만들기</title>
+</head>
+<body>
+    <h3>설문조사</h3>
+    <br>
+    <label for="name">이름</label>
+    <!--id :하나만 사용할 수 있음, label에 있는 단어를 클릭해도 칸에 적을 수 있음-->
+    <input type="text" placeholder="이름" id="name"/><br>
+    <!--이메일만 입력 할수 있는 함수 사용-->
+    <!--label태그 : input에 label를 달아주는 태그-->
+    <label for="email">이메일</label>
+    <input type="email" placeholder="love@example.com" id="email">
+    <br>
+    <h4>나이</h4>
+    <input type="number"  />
+    <!-- input*6하고 tap하면 6개가 생김 -->
+    <!--한번에 여러개 같이 적을 떄 ctrl+alt+방향키-->
+    <input type="radio" name="age" id="one"/>
+    <label for="one">10대</label>
+    <input type="radio" name="age" id="two"/>
+    <label for="two">20대</label>
+    <input type="radio" name="age" id="three" />
+    <label for="three">30대</label>
+    <input type="radio" name="age" id="four"/>
+    <label for="four">40대</label>
+    <input type="radio" name="age" id="five"/>
+    <label for="five">50대</label>
+    <input type="radio" name="age" id="six"/>
+    <label for="six">60대 이상</label><br  />
+    <h4>원하는 강의(복수응답가능합니다.)</h4>
+    <input type="checkbox" name="class" id="html">
+    <label for="html">html</label>
+    <input type="checkbox" name="class" id="javascript">
+    <label for="javascript">javascript</label>
+    <input type="checkbox" name="class" id="CSS">
+    <label for="CSS">CSS</label>
+    <br>
+    <br>
+    <textarea cols="90" rows="10" placeholder="하고싶은 말을 써주세요:)"></textarea>
+    <button>제출</button>
+</body>
+</html>
