@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table 기초</title>
+</head>
+<body>
+    <!--th 사용하기 전에 tr을 사용하고 한다-->
+    <!--cellpadding : 표 내용과 선과의 거리-->
+    <h1>가격표</h1>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+                <th>비고</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>국물떡볶이</td>
+                <td>5,000원</td>
+                <td>매운맛 선택(보통, 맵게, 아주맵게)</td>
+            </tr>
+            <tr>
+                <td>김밥</td>
+                <td>3,000원</td>
+                <td>두 줄 이상 주문 가능</td>
+            </tr>
+            <tr>
+                <td>순대</td>
+                <td>4,000원</td>
+                <td>내장 추가시 1,000원</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>new 가격표</h2>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+                <th>비고</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>국물떡볶이</td>
+                <td>6,000원</td>
+                <td>맵기 선택 가능</td>
+            </tr>
+            <tr>
+                <td>참치김밥</td>
+                <!--rowspan : 해당 칸을 점유하는 행의 수 지정-->
+                <td rowspan="2">4,000원</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>치즈김밥</td>
+                <td></td>
+            </tr>
+            <tr>
+                <!--colspan : 해당 칸을 점유하는 열의 수 지정-->
+                <td colspan="3">순대(품절)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
