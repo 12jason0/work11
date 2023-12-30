@@ -1,0 +1,14 @@
+.fruits span:first-child{
+    color: red;
+}
+/*fruits의 첫번째는 span이기때문에 
+div가 오면 오류가 난다*/
+.fruits h3:last-child{
+    color: orange;
+}
+.fruits *:nth-child(2n+1){
+    color: red;
+}
+.fruits *:not(span){
+    color: red;
+}

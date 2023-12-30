@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 선택자 연습하기</title>
+    <style>
+        * {
+            background-color: gray;
+            color: white;
+        }
+        span {
+            background-color: red;
+        }
+        #first {
+            background-color: blue;
+        }
+        .second{
+            background-color: green;
+        }
+        /* 우선순위 : 전체 선택자 < 태그 선택자 < id=class 선택자
+        같은 class, id에 다른 색상이 주어지면 css에서 내장 방식은 
+        순서가 뒤에 있는 색상 적용 */
+        /* 우선 순위를 무시하고 절대적으로 css 활용하는 것
+             - 색상 마지막에 !important 사용   단) 자주 쓰면 안됨 */
+    </style>
+</head>
+<body>
+    <h1>기본 선택자 연습해보기</h1>
+    <p>기본 선택자 연습을 해보아요!</p>
+    <span>안녕하세요</span>
+    <ol>
+        <li id="first">1</li>
+        <li class="second">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+</body>
+</html>
