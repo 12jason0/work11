@@ -1,0 +1,18 @@
+.square{
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+    display: inline-block;
+}
+.d-none{
+    display: none;
+    background-color: red;
+}
+.invisible{
+    visibility: hidden;
+    background-color: orangered;
+}
+.opacity-0{
+    opacity: 0;
+    background-color: tomato;
+}

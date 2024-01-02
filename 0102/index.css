@@ -1,0 +1,8 @@
+.bgColor{
+    /*max :  문서 등이 최대 값이 넘어가면 무시하고 설정되어 있는
+                최대값까지만 색깔이 입혀진다
+      min :  최소 설정되어 있는 값까지만 입혀진다*/
+    background-color: aquamarine;
+    min-width: calc(1920px - 50%);
+    min-height: 500px;
+}

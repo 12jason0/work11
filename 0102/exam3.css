@@ -1,0 +1,17 @@
+div{
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border: 15px solid red;
+    background-color: orange;
+}
+/*contentbox : contertbox의 크기가 100x100
+                (빨리 만들기 쉬움)*/
+.contentbox{
+    box-sizing: content-box;
+}
+/*borderbox : 그림 전체 크기가 100x100
+                (개발하기 쉬움)*/
+.borderbox{
+    box-sizing: border-box;
+}

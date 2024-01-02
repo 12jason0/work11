@@ -1,0 +1,20 @@
+body{
+    margin : 0px;
+       /*height : %를 넣으면 안들어 갈수 있음*/
+       background-color: antiquewhite;
+       height: 100vh;
+}
+
+.auto{
+    background-color: blue;
+    color: white;
+    height: calc(100vw / 10 );
+    width: calc(100vw / 10 );
+    margin: auto;
+    text-align: center; 
+    /*상단의 margin 값 계산 하기 위해서 적은 것
+      50vh : 높이의 50%
+      100vw / 20 : 전체를 20으로 나눔(전체 넒이의 5%) */
+    margin-top: calc(50vh - (100vw / 20));
+    line-height: calc(100vw / 10);
+}

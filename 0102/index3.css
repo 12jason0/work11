@@ -1,0 +1,12 @@
+.main{
+    width: 250px;
+    height: 250px;
+    background-color: aquamarine;
+    /*overflow : 요소의 크이 이상으로 내용이 넘쳤을 때 보여짐을 제어*/
+    /*hidden :  벗어난 부분 자르기*/
+    /*scroll : 스크롤 표시(최근 브라우저 scroll 설정은 auto 동일하기도 함)*/
+    /*auto : 부모 영역을 넘어갈 때만 표시*/
+    /*다른 점(scroll  vs   auto) : scroll은 x,y축 둘다 scroll이 생김
+                                   auto은 y축만 scroll이 생김*/
+    overflow: auto;
+}

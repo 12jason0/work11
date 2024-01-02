@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소 선택자</title>
+    <style>
+        .box::before{
+            content: "택시 ";
+        }
+        .box::after{
+            content: " 빨리";
+        }
+    </style>
+</head>
+<body>
+    <div class="box">여기요!</div>
+</body>
+</html>
