@@ -1,0 +1,22 @@
+.con{
+    width: 500px;
+    height: 500px;
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+}
+.item1{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+.item2{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+.item3{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+}
