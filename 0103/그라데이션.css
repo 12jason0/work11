@@ -1,0 +1,22 @@
+.grad{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.grad-1{
+    /*기본형 위-> 아래*/
+    /* background: linear-gradient(gray, tomato); */
+ }
+.grad-2{
+    /*90deg : 90도로 방향 바꿈*/
+    /* background: linear-gradient(90deg, gray, tomato); */
+ }
+.grad-3{
+    background: linear-gradient(red 20%, yellow 30%, blue 70%);
+}
+/* .grad-1{
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(217deg, blue, white);
+} */
