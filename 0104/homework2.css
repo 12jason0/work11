@@ -1,0 +1,23 @@
+.text{
+    display: block;
+    font-weight: bold;
+    animation-duration: 3s;
+    animation-name: text;
+    font-size: 16px;
+    /* margin-inline-start: 0%;
+    margin-inline-end: 0%;
+    margin-block-start: 0em;
+    margin-block-end: 0em; */
+
+}
+
+@keyframes text {
+    from{
+        margin-left: 100%;
+        width: 300%;
+    }
+    to{
+        margin-left: 0%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+    <script>
+        //주석 : 한 줄일때 '//'
+        // console.log("Hello JS World")
+        //console.log : 개발자들이 사용하는 것, 개발 한 뒤에는 지워야함(콘솔에 들어가는 사용자들한테도 보여짐)
+        //읽는 순서 : 위->아래
+        //body안에다가 적을 때는 HTML 코드 다음으로 씀
+        //head에 포함 될 경우 js 코드가 길어지면 다 읽고 사이트 열어야되서 오래 걸림
+        //body에 포함 될 경우 js 코드가 길어지면 사이트가 열린 뒤 조금 뒤에 동적으로 움직임
+        //html코드를 제어해야하는 js코드는 head에다가 적어야 됨
+        alert("Head.js 파일 링크 위")
+    </script>
+    <script src="indexjs.js"></script>
+    <script>
+        alert("Head. js 파일 링크 아래")
+    </script>
+</head>
+<script>
+    alert("Head랑 Body사이")
+</script>
+<body>
+    <h1>Hello, JS world!</h1>
+    <script>
+        alert("body 안쪽")
+    </script>
+</body>
+<script>
+    alert("body 아래")
+</script>
+</html>

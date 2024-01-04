@@ -1,0 +1,16 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    overflow: auto;
+}
+.box:hover{
+    width: 300px;
+    height: 300px;
+    opacity: 0.5;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0.5s;
+}

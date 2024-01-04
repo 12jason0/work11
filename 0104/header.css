@@ -1,0 +1,60 @@
+h3{
+    text-align: center;
+}
+.con{
+    background-color: rgb(192, 185, 185);
+    display: flex;
+    width: 100%;
+    height: 25px;
+}
+.menu{
+    width: 80px;
+    height: 25px;
+    text-align: center;
+}
+.MENU{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+.con1{
+    background-color: rgb(192, 185, 185);
+    display: flex;
+    width: 100%;
+    height: 25px;
+    justify-content: space-between;
+}
+.con2{
+    background-color: rgb(192, 185, 185);
+    display: flex;
+    width: 100%;
+    height: 25px;
+    justify-content: space-between;
+}
+p{
+    background-color: pink;
+    color: white;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+}
+.con3{
+    background-color: rgb(192, 185, 185);
+    display: flex;
+    width: 100%;
+    height: 25px;
+}
+.con4{
+    background-color: rgb(192, 185, 185);
+    display: flex;
+    width: 100%;
+    height: 25px;
+}
+.con5{
+    background-color: rgb(192, 185, 185);
+    display: flex;
+    width: 100%;
+    height: 25px;
+    justify-content: flex-end;
+}
