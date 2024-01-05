@@ -1,23 +1,19 @@
 .text{
-    display: block;
-    font-weight: bold;
-    animation-duration: 3s;
-    animation-name: text;
-    font-size: 16px;
-    /* margin-inline-start: 0%;
-    margin-inline-end: 0%;
-    margin-block-start: 0em;
-    margin-block-end: 0em; */
+   position: relative;
 
+   animation-name: 123;
+   animation-timing-function: ease-in-out;
+   /* animation-iteration-count: 1; */
+   animation-duration: 3s;
 }
 
-@keyframes text {
+@keyframes 123 {
     from{
-        margin-left: 100%;
+        left: 100%;
         width: 300%;
     }
     to{
-        margin-left: 0%;
+        left: 0%;
         width: 100%;
     }
 }
