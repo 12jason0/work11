@@ -1,8 +1,8 @@
-.box{
+.box {
     width: 200px;
     height: 200px;
     background-color: blue;
 }
-.box:hover{
+.box:hover {
     opacity: 0;
 }

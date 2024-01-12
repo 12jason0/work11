@@ -1,13 +1,13 @@
-body{
+body {
     height: 1000px;
 }
-.contaner{
+.contaner {
     background-color: aquamarine;
     width: 500px;
     height: 500px;
     position: relative;
 }
-.item1{
+.item1 {
     height: 100px;
     width: 100px;
     background-color: red;
@@ -15,7 +15,7 @@ body{
     left: 50px;
     position: relative;
 }
-.item2{
+.item2 {
     width: 150px;
     height: 150px;
     position: absolute;
@@ -23,7 +23,7 @@ body{
     bottom: 100px;
     background-color: black;
 }
-.item3{
+.item3 {
     width: 200px;
     height: 200px;
     right: 100px;

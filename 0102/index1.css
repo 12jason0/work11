@@ -1,4 +1,4 @@
-.box{
+.box {
     width: 300px;
     height: 300px;
     background-color: aquamarine;
@@ -15,5 +15,4 @@
     /* border-radius: 40px; */
     /* border-radius: 0 50px 0 0; */
     border-bottom-right-radius: 50px;
-    
 }

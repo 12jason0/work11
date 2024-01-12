@@ -1,4 +1,4 @@
-.ball{
+.ball {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -12,24 +12,24 @@
     animation-direction: normal;
 }
 
-@keyframes ball{
-    0%{
+@keyframes ball {
+    0% {
         left: 0px;
         top: 0px;
     }
-    25%{
+    25% {
         left: 100px;
         top: 0px;
     }
-    50%{
+    50% {
         top: 100px;
         left: 100px;
     }
-    75%{
+    75% {
         left: 0px;
         top: 100px;
     }
-    100%{
+    100% {
         left: 0px;
         top: 0px;
     }

@@ -4,13 +4,13 @@
     width: 300px;
     height: 300px;
 }
-.box1{
+.box1 {
     background-color: yellowgreen;
     width: 100px;
     height: 80px;
     position: relative;
 }
-.box2{
+.box2 {
     position: absolute;
     background-color: red;
     width: 150px;
@@ -18,12 +18,12 @@
     top: 120px;
     left: 150px;
 }
-.box3{
+.box3 {
     background-color: orange;
     width: 100px;
     height: 150px;
     position: fixed;
-}   
+}
 /*fixed vs absolute : fixed - 스크롤을 해도 고정되어있어서 따라 온다
                       absoluted - 스크롤을 하면 부모에 고정되어있어서 움직임
                                     단, 부모가 relative여야함*/

@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <style>
-        /*content 앞에 쓸때는 before*/
-        /*content : ex) 이미지가 나오는 슬라이드 앞이나 뒤에 버튼을
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <style>
+            /*content 앞에 쓸때는 before*/
+            /*content : ex) 이미지가 나오는 슬라이드 앞이나 뒤에 버튼을
                     만들어서 클릭하는 방식때 주로 사용*/
-        .box::before{
-            content: "앞에!";
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background-color: red;
-        }
-        /*content 뒤에 쓸대는 after*/
-        .box::after{
-            content: "뒤에!";
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background-color: blue;
-        }
-    </style>
-</head>
-<body>
-    <div class="box">
-        안녕하세요
-    </div>
-</body>
+            .box::before {
+                content: '앞에!';
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                background-color: red;
+            }
+            /*content 뒤에 쓸대는 after*/
+            .box::after {
+                content: '뒤에!';
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">안녕하세요</div>
+    </body>
 </html>

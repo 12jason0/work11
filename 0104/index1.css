@@ -1,9 +1,9 @@
-.box{
+.box {
     width: 100px;
     height: 100px;
     cursor: pointer;
 }
-.box1:hover{
+.box1:hover {
     width: 400px;
     background-color: blue;
     opacity: 0.5;
@@ -11,32 +11,32 @@
     transition-timing-function: ease;
     transition-delay: 1s;
 }
-.box1{
+.box1 {
     background-color: red;
 }
-.box2:hover{
+.box2:hover {
     transform: rotate(180deg);
     background-color: green;
-    transition: all 1s ease-in-out; 
+    transition: all 1s ease-in-out;
 }
-.box2{
+.box2 {
     background-color: orange;
 }
-.box3:hover{
+.box3:hover {
     transform: scale(3) translate(100px, 100px);
     transition: all 3s ease-in-out;
 }
-.box3{
+.box3 {
     background-color: yellow;
 }
-.box4:hover{
+.box4:hover {
     transform: translate(-5px, -15px);
     /* box-shadow : 그림자 
     (x축 y축 선명도)
     선명도 : 0으로 갈수록 선명, 음수는 없음*/
-    box-shadow: 4px 4px 10px #000800;   
+    box-shadow: 4px 4px 10px #000800;
     transition: all 0.2s ease-in;
 }
-.box4{
+.box4 {
     background-color: green;
 }

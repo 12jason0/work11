@@ -1,4 +1,4 @@
-.main > div{
+.main > div {
     /*display : 레이아웃을 꾸밀 때 사용, 
         화면에 요소들을 어떻게 보여줄 지 나타내는 것 */
     display: inline-block;

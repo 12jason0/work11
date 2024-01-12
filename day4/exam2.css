@@ -1,10 +1,10 @@
-[disabled]{
+[disabled] {
     background-color: red;
 }
-[placeholder="이름"]{
+[placeholder='이름'] {
     background-color: orange;
 }
 /*[속성]*/
-input:not([placeholder]){
+input:not([placeholder]) {
     background-color: blue;
 }

@@ -1,24 +1,24 @@
-.con{
+.con {
     position: relative;
     display: flex;
 }
-img{
+img {
     position: absolute;
     width: 500px;
     height: 200px;
     transform: skew(-16deg, 13deg);
 }
-.img1{
+.img1 {
     top: 150px;
     left: 100px;
     z-index: 3;
 }
-.img2{
-    top:100px;
+.img2 {
+    top: 100px;
     left: 250px;
     z-index: 2;
 }
-.img3{
+.img3 {
     top: 70px;
     left: 400px;
     z-index: 1;

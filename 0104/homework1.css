@@ -1,4 +1,4 @@
-.box{
+.box {
     width: 100px;
     height: 100px;
     background-color: black;
@@ -6,7 +6,7 @@
     cursor: pointer;
     overflow: auto;
 }
-.box:hover{
+.box:hover {
     width: 300px;
     height: 300px;
     opacity: 0.5;
