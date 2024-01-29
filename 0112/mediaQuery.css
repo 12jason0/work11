@@ -1,0 +1,20 @@
+@media (max-width: 500px) {
+    body {
+        background-color: skyblue;
+    }
+}
+@media (max-width: 300px) {
+    body {
+        background-color: orange;
+    }
+}
+@media (max-height: 300px) {
+    p {
+        font-size: 30px;
+    }
+}
+@media (min-height: 500px) {
+    p {
+        background-color: green;
+    }
+}
