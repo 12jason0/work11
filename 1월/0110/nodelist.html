@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <div class="exam">1</div>
+        <div class="exam">2</div>
+        <div class="exam">3</div>
+        <div class="exam">4</div>
+        <div class="exam">5</div>
+        <div id="visible">Hello <span>World</span></div>
+        <div id="hidden" class="hidden">Hello <span>World</span></div>
+
+        details태그
+        toggle 태그랑 비슷
+        <details>
+            <summary>QnA</summary>
+            <div>사용자가 클릭 후 볼 수 있는 내용</div>
+        </details>-->
+
+        <div id="exam">
+            보이는 텍스트,
+            <span class="hidden">안보이는 텍스트</span>
+            <span style="display: inline">보이는 텍스트2,</span>
+            <script>
+                console.log('Script tage');
+            </script>
+            <style>
+                body {
+                    margin: 0;
+                }
+            </style>
+            스크립트와 스타일 후 보이는 텍스트
+        </div>
+
+        <script>
+            //innerText  vs  textContent 차이점
+            let exam = document.getElementById('exam');
+            console.log('innerText', exam.innerText);
+            console.log('textContent', exam.textContent);
+            /*동적 
+            반복문 안에서만 작동
+            exam[1]이 사라져서 4개의 배열로 인식 후 반복문 다시 실행
+            그래서 exam[4]가 사라짐.
+            
+            const exam = document.getElementsByClassName('exam');
+
+            정적 (nodeList)
+             [1,2,3,4,5]을 반복문이 돌 때마다 꼐속 다 가지고 돈다
+             동적처럼 반복문을 돌릴 때처럼 사라지는 것이 아님
+
+            const exam = document.querySelectorAll('.exam');
+            console.log(exam);
+            for (let i = 1; i < exam.length; i += 2) {
+                exam[i].parentNode.removeChild(exam[i]);
+            }*/
+
+            //     const visible = document.getElementById('visible');
+            //     const hidden = document.getElementById('hidden');
+            //     랜더링된 텍스트와 전체 텍스트 출력
+            //     console.log('visible innerText', visible.innerText);
+            //     console.log('visible textContent', visible.textContent);
+
+            //
+
+            // text.innerHTML = 'hi';
+            // text.textContent = '안녕';
+            /*
+             *  innerText : 1. "랜더링된" 텍스트를 반영. 즉, 스타일링이 적용된 후 텍스트 반환
+                            2. 성능이 textContext보다 느릴 수 있음.
+             *  textContent : 1. 요소 "전체" 텍스트 컨텍츠를 가져옴. 즉, CSS스타일에 관계없이 모든 텍스트 반환
+                              2. 랜더링된 텍스트를 계산하지 않기 때문에 성능면에서 더 빠름.
+             - 가져올 때 차이점이 있음.
+            */
+        </script>
+    </body>
+</html>

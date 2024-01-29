@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+        <script>
+            $(function () {
+                $('#draggable').draggable();
+            });
+        </script>
+        <style>
+            body {
+                padding-bottom: 1000px;
+            }
+            .hover {
+                font-size: 20px;
+                background-color: skyblue;
+                transition: all 0.2s;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="draggable" class="ui-widget-content">
+            <p>Drag me around</p>
+        </div>
+        <h4>jQuery Event</h4>
+        <p class="hello">안녕하세요</p>
+        <ul class="numbers">
+            <li class="nums">1</li>
+            <li class="nums">2</li>
+            <li class="nums">3</li>
+            <li class="nums">4</li>
+        </ul>
+        <div class="div-hover">hover변화</div>
+        <input type="text" class="input-key" />
+        <script src="index.js"></script>
+    </body>
+</html>
