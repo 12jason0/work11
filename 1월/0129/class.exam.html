@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            class Shape {
+                constructor(height, width) {
+                    this.height = height;
+                    this.width = width;
+                }
+                getArea() {
+                    return this.height * this.width;
+                }
+            }
+            let rec1 = new Shape(3, 4);
+            console.log(rec1.getArea());
+
+            // class Rectangle extends Shape {
+            //     Mathsqurt() {
+            //         console.log((this.width * this.heigh) ** 2 == 2);
+            //     }
+            // }
+            // let Math = new Rectangle(3, 4);
+            // console.log(Math.Mathsqurt());
+
+            // class Triangle extends Shape {}
+
+            // class Circle extends Shape {
+            //     constructor() {
+            //         this.radius = radius;
+            //     }
+            // }
+        </script>
+    </body>
+</html>
