@@ -1,5 +1,5 @@
 //1970년 1월 1일 0시를 기준으로 시작 (UTC) ex) 대한민국 UTC+9
-/*
+
 console.log(new Date(2024, 1));
 const date = new Date();
 console.log(date.getFullYear());
@@ -29,4 +29,3 @@ console.log(Math.floor(1.5)); //버림
 console.log(Math.ceil(1.5)); //올림
 console.log(Math.abs(10 - 28)); //절대값
 console.log(Math.cbrt(2)); //세제곱근을 반환
-*/
