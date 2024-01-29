@@ -1,3 +1,4 @@
+
 let age = prompt('나이를 입력해주세요');
 
 let gender = prompt('성별을 입력해주세요');
@@ -22,6 +23,7 @@ if (age >= 20 && gender === '남자') {
     console.log('유아 남자');
 } else {
     console.log('유아 여자');
+
 }
 
 //if else를 사용하는데 코드가 복잡하고 몇가지가 섞인 상태일 때
@@ -48,4 +50,4 @@ function ageFunc(age, gender) {
     } else {
         console.log('나이가 틀렸습니다');
     }
-}
+
