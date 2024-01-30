@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //Promise
+            //함수는 중복된 코드를 없애려고 사용
+            function changeBgColor(newColor, delay) {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = newColor;
+
+                        resolve();
+                    }, delay);
+                });
+            }
+
+            //실행
+            // changeBgColor('red')
+            //     .then(() => {
+            //         return changeBgColor('orange');
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('yellow');
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('green');
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('blue');
+            //     });
+
+            //async/await
+            async function exec() {
+                await changeBgColor('red', 500);
+                await changeBgColor('blue', 2000);
+                await changeBgColor('purple', 1000);
+                await changeBgColor('yellow', 2000);
+            }
+            exec();
+
+            /*
+            function hi1() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'red';
+                        resolve();
+                    }, 2000);
+                });
+            }
+            function hi2() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'orange';
+                        resolve();
+                    }, 2000);
+                });
+            }
+            function hi3() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'yellow';
+                        resolve();
+                    }, 2000);
+                });
+            }
+            function hi4() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'green';
+                        resolve();
+                    }, 2000);
+                });
+            }
+            function hi5() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'blue';
+                        resolve();
+                    }, 2000);
+                });
+            }
+            function hi6() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'navy';
+                        resolve();
+                    }, 2000);
+                });
+            }
+            function hi7() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'purple';
+                        resolve();
+                    }, 2000);
+                });
+            }
+            async function color() {
+                await hi1();
+                await hi2();
+                await hi3();
+                await hi4();
+                await hi5();
+                await hi6();
+                await hi7();
+            }
+            color();*/
+        </script>
+    </body>
+</html>
