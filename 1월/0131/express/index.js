@@ -26,6 +26,28 @@ app.get('/gugu', (req, res) => {
     res.render('gugudan', { data: 2, dan: 3, leng: [1, 2, 3, 4, 5, 6, 7, 8, 9] });
 });
 
+app.get('/fruit', (req, res) => {
+    res.render('fruit', {
+        fruit: [
+            {
+                name: 'apple',
+                kor: '사과',
+            },
+            {
+                name: 'banana',
+                kor: '바나나',
+            },
+            {
+                name: 'grape',
+                kor: '포도',
+            },
+            {
+                name: 'peach',
+                kor: '복숭아',
+            },
+        ],
+    });
+});
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
 });
