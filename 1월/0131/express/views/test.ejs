@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../public/CSS/style.css" />
+    </head>
+    <body>
+        <!--다른 파일 가져오기-->
+        <%-include('Header.ejs') %>
+        <h1>Hello ejs</h1>
+        <ul class="test">
+            <% for(var i = 0; i < 5; i++) { %>
+            <li>안녕</li>
+            <% } %>
+        </ul>
+        <!--server에서 보내준 값 클라이언트에서 출력-->
+        <h1><%= name %></h1>
+    </body>
+</html>

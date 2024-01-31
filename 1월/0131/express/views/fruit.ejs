@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=s, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    </head>
+    <body>
+        <h1>이미지 바꾸기</h1>
+        <img src="/public/image/q.jpg" width="300" height="300" />
+        <br />
+        <% for( let i = 0; i < fruit.length; i++) { %>
+        <button class="btn <%= fruit[i].name %>"><%= fruit[i].kor %></button>
+        <% } %>
+
+        <script>
+            $('.btn').click(function () {
+                let name;
+                if ($(this).hasClass('apple')) {
+                    name = 'apple';
+                } else if ($(this).hasClass('banana')) {
+                    name = 'banana';
+                } else if ($(this).hasClass('grape')) {
+                    name = 'grape';
+                } else if ($(this).hasClass('peach')) {
+                    name = 'peach';
+                }
+                $('img').attr('src', `/public/image/${name}.jpg`);
+            });
+        </script>
+    </body>
+</html>
