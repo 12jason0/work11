@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <%-include('header.ejs')%>
+        <h1><%= data%>단</h1>
+        <% for(let i = 1; i<10; i++) { %>
+        <div><%= data %> x <%= i %> = <%= data * i %></div>
+        <% } %>
+        <hr />
+        <% for(let i = dan; i < 10; i++) { %> <% for(let j = leng[0]; j <= leng.length; j++) { %>
+        <div><%= `${i} x ${j} = ${i*j}` %></div>
+        <% } %> <% } %>
+    </body>
+</html>
