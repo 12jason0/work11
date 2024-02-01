@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <ul>
+            <li>이름 : <%= userInfo.username%></li>
+            <li>성별 : <%= userInfo.gender%></li>
+            <li>생일 : <%= userInfo.birthYear%>-<%= userInfo.birthMonth%>-<%= userInfo.birthDay%></li>
+            <li>취미 : <%= userInfo.hobby%></li>
+            <% if(userInfo.color.result) { %>
+            <li>색상 : <%= userInfo.color %></li>
+            <% } %> <% if(userInfo.number.result) { %>
+            <li>숫자 : <%= userInfo.number %></li>
+            <% } %>
+        </ul>
+    </body>
+</html>

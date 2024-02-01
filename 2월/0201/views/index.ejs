@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>폼 전송</title>
+    </head>
+    <body>
+        <h3>폼 전송 실습</h3>
+        <h4>GET요청</h4>
+        <!--action : backend(router)에서 사용할 주소-->
+        <form action="/getForm" method="GET">
+            <input type="text" placeholder="id" name="id" required />
+            <input type="password" placeholder="pw" name="pw" required />
+            <!--button type= submit으로 해서 정보가 전송이 됨-->
+            <button type="submit">제출</button>
+        </form>
+        <hr />
+        <h4>POST요청</h4>
+        <form action="/postForm" method="POST">
+            <input type="text" placeholder="id" name="id" required />
+            <input type="password" placeholder="pw" name="pw" required />
+            <!--button type= submit으로 해서 정보가 전송이 됨-->
+            <button type="submit">제출</button>
+        </form>
+    </body>
+</html>

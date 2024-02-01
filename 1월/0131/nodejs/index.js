@@ -11,23 +11,23 @@ const fs = require('fs');
 //http 생성
 //http  - 많은 기능을 수행하지 못하므로 express를 선호함
 const server = http.createServer(function (req, res) {
-    // res.writeHead(200); head에다가 200이라는 코드 보냄
-    // res.write('<h1>Hello Nodejs</h1>');
-    // res.end('<p>End</p>');
+    res.writeHead(200); //head에다가 200이라는 코드 보냄
+    res.write('<h1>Hello Nodejs</h1>');
+    res.end('<p>End</p>');
 
     //try-catch
     //오류가 나면 서버가 멈추는 것을 방지 하기 위해 try{정상 작동 할떄의 코드}catch(error){실패했을 때의 코드}
 
     //파일 전송
-    try {
-        const data = fs.readFileSync('./index.html');
-        res.writeHead(200);
-        res.end(data);
-    } catch (error) {
-        console.log(error);
-        res.writeHead(404);
-        res.end(error.message);
-    }
+    // try {
+    //     const data = fs.readFileSync('./index.html');
+    //     res.writeHead(200);
+    //     res.end(data);
+    // } catch (error) {
+    //     console.log(error);
+    //     res.writeHead(404);
+    //     res.end(error.message);
+    // }
 });
 
 //서버 이벤트
