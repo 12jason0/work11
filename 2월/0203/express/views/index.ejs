@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <!-- <h1>FORM 싱글 연습</h1>
+        파일 업로드 할 땐 post방식
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="userfile" /><br />
+            <input type="text" name="title" /><br />
+            <button type="submit">업로드</button>
+        </form> -->
+        <!-- <h1>FORM 멀티 연습 (ver1)</h1>
+        <form action="/uploads/array" method="post" enctype="multipart/form-data">
+            <input type="file" name="userfile" multiple /><br />
+            <input type="text" name="title" /><br />
+            <button type="submit">업로드</button>
+        </form> -->
+        <!-- <h1>FORM 멀티 연습(ver2)</h1>
+        <form action="/uploads/fields" method="post" enctype="multipart/form-data">
+            <input type="file" name="userfile1" multiple /><br />
+            <input type="text" name="title1" /><br />
+            <input type="file" name="userfile2" /><br />
+            <input type="text" name="title2" /><br />
+            <button type="submit">업로드</button>
+        </form> -->
+        <!--동적 파일
+            form이 필요 없을 때도 있음-->
+        <h1>동적 파일 업로드</h1>
+        <form>
+            <input type="file" id="userfile" /><br />
+            <input type="text" id="title" /><br />
+            <button type="button" onclick="fileUpload()">업로드</button>
+        </form>
+        <br />
+        <br />
+        <div class="resultBox"></div>
+        <script>
+            const resultBox = document.querySelector('.resultBox');
+            function fileUpload() {
+                const file = document.querySelector('#userfile');
+                //file에 접근하기 위해서 file.files를 사용하고
+                //file.files는 배열을 반환하며 우리가 원하는 것은
+                //첫번째 요소 이기 때문에 file.files[0]를 사용합니다.
+                console.log(file.files[0]);
+
+                //FormData : 자바스크립트 내장 객체이고 폼 데이터 생성
+                const formData = new FormData();
+                //append(key, value)
+                //백엔드로 보냄
+                //file들을 가장 마지막으로 작성(순서 중요) :
+                //   -> file이 위에 있으면 아래에 있는 다른 데이터들 무시
+                formData.append('title', document.querySelector('#title').value);
+                formData.append('file', file.files[0]);
+
+                axios({
+                    method: 'POST',
+                    url: '/upload/axios',
+                    data: formData,
+                    //중요 - 동적일때는 form에다가 작성 하지 않고 headers로 해서 작성함//
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                }).then((res) => {
+                    console.log('res', res);
+                    resultBox.innerHTML = `<p>나는  ${res.data.title.title}</p><img src=${res.data.file.path}>`;
+                });
+            }
+        </script>
+    </body>
+</html>
