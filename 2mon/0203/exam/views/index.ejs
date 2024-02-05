@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <form action="/uploads" method="post" enctype="multipart/form-data">
+            <input type="text" id="id" required placeholder="아이디" />
+            <br />
+            <input type="password" id="pw" required placeholder="비밀번호" />
+            <br />
+            <input type="text" id="username" required placeholder="이름" />
+            <br />
+            <input type="number" id="age" required placeholder="나이" />
+            <br /><br />
+            <input type="file" name="file" id="file" />
+            <br /><br />
+            <button type="submit">회원가입</button>
+        </form>
+        <br />
+</html>
