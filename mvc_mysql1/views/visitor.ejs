@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>방명록</h1>
+        <form name="visitor-form">
+            <fieldset>
+                <legend>방명록 등록</legend>
+                <input type="text" id="name" placeholder="방문자 이름" /><br />
+                <input type="text" id="comment" placeholder="방명록 작성" /><br />
+                <button type="button" onclick="registerFunc()">등록</button>
+            </fieldset>
+        </form>
+        <br />
+        <table border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>작성자</th>
+                    <th>내용</th>
+                    <th>수정</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <script>
+            const tbody = document.querySelector('tbody');
+            (async function () {
+                const res = await axios({
+                    method: 'GET',
+                    url: '/api/visitor',
+                });
+                console.log(res.data.result);
+                for (let i = 0; i < res.data.result.length; i++) {
+                    const html = `
+                        <tr>
+                            <td>${res.data.result[i].id}</td>
+                            <td>${res.data.result[i].name}</td>
+                            <td>${res.data.result[i].comment}</td>
+                            <td><button type="button" onclick="editFunc(${res.data.result[i].id})">수정</button></td>
+                            <td><button type="button" onclick="deleteFunc(${res.data.result[i].id})">삭제</button></td>
+                        </tr>
+                    `;
+                    tbody.insertAdjacentHTML('beforeend', html);
+                }
+            })();
+
+            async function registerFunc() {
+                const form = document.forms['visitor-form'];
+                const res = await axios({
+                    method: 'POST',
+                    url: '/api/visitor/write',
+                    data: {
+                        name: form.name.value,
+                        comment: form.comment.value,
+                    },
+                });
+                console.log('res', res);
+                const html = `
+                        <tr>
+                            <td>${res.data.id}</td>
+                            <td>${res.data.name}</td>
+                            <td>${res.data.comment}</td>
+                            <td><button type="button" onclick="editFunc(${res.data.id})">수정</button></td>
+                            <td><button type="button" onclick="deleteFunc(${res.data.id})">삭제</button></td>
+                        </tr>
+                    `;
+                tbody.insertAdjacentHTML('beforeend', html);
+            }
+
+            async function editFunc(id) {
+                const form = document.forms['visitor-form'];
+                const res = await axios({
+                    method: 'PATCH',
+                    url: '/api/visitor/update',
+                    data: {
+                        name: form.name.value,
+                        comment: form.comment.value,
+                        id: Number(id),
+                    },
+                });
+                console.log(res);
+                if (res.data.result) {
+                    document.location.reload();
+                }
+            }
+
+            async function deleteFunc(id) {
+                if (!confirm('삭제하시겠습니까?')) {
+                    console.log('취소');
+                    return; //취소
+                }
+                const res = await axios({
+                    method: 'DELETE',
+                    url: '/api/visitor/delete',
+                    data: {
+                        id: Number(id),
+                    },
+                });
+                if (res.data.result) {
+                    document.location.reload();
+                }
+            }
+        </script>
+    </body>
+</html>
