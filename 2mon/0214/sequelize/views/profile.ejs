@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>회원정보 조회 페이지</h1>
+        <form name="info-form">
+            <br />
+            <input type="text" id="id" readonly /><br />
+            <input type="text" id="pw" placeholder="비밀번호" /><br />
+            <input type="text" id="username" placeholder="이름" /><br />
+            <button type="button" onclick="updateFunc()">수정</button>
+            <button type="button" onclick="deleteFunc()">삭제</button>
+            <input type="hidden" id="db" />
+        </form>
+    </body>
+    <script>
+        console.log(document.location.href);
+        const temp = document.location.href.split('profile/');
+        console.log(temp);
+        //페이지가 열리자 마자 실행
+        (async function () {
+            const result = await axios({
+                method: 'GET',
+                url: `/api/user/info/${temp[1]}`,
+            });
+            const { id, userid, password, username } = result.data.info;
+            document.querySelector('#id').value = userid;
+            document.querySelector('#pw').value = password;
+            document.querySelector('#username').value = username;
+            document.querySelector('#db').value = id;
+        })();
+
+        function updateFunc() {
+            const form = document.forms['info-form'];
+            axios({
+                method: 'PATCH',
+                url: '/api/user/update',
+                data: {
+                    id: form.db.value,
+                    pw: form.pw.value,
+                    username: form.username.value,
+                },
+            }).then((res) => {
+                if (res.data.result) {
+                    alert('회원정보가 수정되었습니다.');
+                    document.location.reload();
+                }
+            });
+        }
+
+        function deleteFunc() {
+            if (!confirm('탈퇴하시겠습니까?')) {
+                return;
+            }
+            const form = document.forms['info-form'];
+            axios({
+                method: 'DELETE',
+                url: '/api/user/delete',
+                data: {
+                    id: Number(form.db.value),
+                },
+            }).then((res) => {
+                if (res.data.result) {
+                    alert('탈퇴 완료 되었습니다.');
+                    document.location.href = '/';
+                }
+            });
+        }
+    </script>
+    <!--UUID : 난수 값-->
+</html>
