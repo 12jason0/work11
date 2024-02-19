@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>게시판 글 상세내용</h1>
+        <a href="/post"><-- 이전페이지</a>
+        <form name="post-form">
+            <input type="text" id="title" placeholder="제목" /><br />
+            <textarea id="content" cols="30" rows="10"></textarea>
+            <input type="hidden" id="index" /><br />
+            <button type="button" onclick="updateFunc()">수정</button>
+            <button type="button" onclick="deleteFunc()">삭제</button>
+            <ul></ul>
+        </form>
+        <script>
+            const [_, url] = document.location.href.split('post/');
+            console.log(url);
+            const ul = document.querySelector('ul');
+            (async function () {
+                const res = await axios({
+                    method: 'GET',
+                    url: `/api/post/${url}`,
+                });
+                console.log(res);
+                const { id, title, content, comments } = res.data.result;
+                document.querySelector('#title').value = title;
+                document.querySelector('#content').value = content;
+                document.querySelector('#index').value = id;
+                for (let i = 0; i < comments.length; i++) {
+                    const html = `<li>
+                            ${comments[i].content}
+                            <button type=button onclick=commentFunc(${comments[i].id})>삭제</button>
+                        </li>`;
+                    ul.insertAdjacentHTML('beforeend', html);
+                }
+            })();
+
+            async function updateFunc() {
+                const form = document.forms['post-form'];
+                const res = await axios({
+                    method: 'PATCH',
+                    url: '/api/post/update',
+                    data: {
+                        id: form.index.value,
+                        title: form.title.value,
+                        content: form.content.value,
+                    },
+                });
+                console.log('res', res);
+                if (res.data.success) {
+                    document.location.reload();
+                }
+            }
+
+            async function deleteFunc() {
+                if (!confirm('삭제하시겠습니까?')) {
+                    return;
+                }
+                const res = await axios({
+                    method: 'DELETE',
+                    url: '/api/post/delete',
+                    data: {
+                        id: document.querySelector('#index').value,
+                    },
+                });
+                if (res.data.success) {
+                    document.location.href = '/post';
+                }
+            }
+        </script>
+    </body>
+</html>
