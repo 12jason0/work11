@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>내정보 조회/수정/탈퇴</h1>
+        <a href="/post"><-- 이전페이지</a>
+        <form>
+            <input type="text" id="userId" readonly /><br />
+            <input type="password" id="pw" placeholder="비밀번호" required /><br />
+            <input type="text" id="username" placeholder="이름" required /><br />
+            <input type="number" id="age" placeholder="나이" /><br />
+            <input type="email" id="email" placeholder="이메일" /><br />
+            <button type="button" onclick="updateFunc()">수정</button>
+            <button type="button" onclick="deleteFunc()">탈퇴</button>
+        </form>
+        <script>
+            (async function () {
+                const res = await axios({
+                    method: 'GET',
+                    url: `/api/member/info`,
+                });
+                const { profile, userId, password } = res.data.result;
+                console.log(res);
+                document.querySelector('#userId').value = userId;
+                document.querySelector('#pw').value = password;
+                document.querySelector('#username').value = profile.username;
+                document.querySelector('#age').value = profile.age;
+                document.querySelector('#email').value = profile.email;
+            })();
+
+            async function updateFunc() {
+                const data = {
+                    pw: document.querySelector('#pw').value,
+                    username: document.querySelector('#username').value,
+                    age: document.querySelector('#age').value,
+                    email: document.querySelector('#email').value,
+                };
+                const res = await axios({
+                    method: 'PATCH',
+                    url: '/api/member/update',
+                    data,
+                });
+                console.log(res);
+                if (res.data.success) {
+                    alert('수정되었습니다');
+                    document.location.reload();
+                }
+            }
+
+            async function deleteFunc() {
+                if (!confirm('탈퇴하시겠습니까?')) {
+                    return;
+                }
+                const res = await axios({
+                    method: 'DELETE',
+                    url: '/api/member/delete',
+                    data: {
+                        id: localStorage.getItem('login'),
+                    },
+                });
+                if (res.data.success) {
+                    alert('탈퇴 완료되었습니다');
+                    document.location.href = '/';
+                }
+            }
+        </script>
+    </body>
+</html>
