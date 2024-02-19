@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>신규 글 작성</h1>
+        <a href="/post"><-- 이전페이지</a>
+        <form name="post-form">
+            <input type="text" id="title" placeholder="제목" /><br />
+            <textarea id="content" cols="30" rows="10" placeholder="내용"></textarea><br />
+            <button type="button" onclick="writeFunc()">등록</button>
+        </form>
+        <script>
+            async function writeFunc() {
+                const res = await axios({
+                    method: 'POST',
+                    url: '/api/post/write',
+                    data: {
+                        title: document.querySelector('#title').value,
+                        content: document.querySelector('#content').value,
+                    },
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    },
+                });
+                console.log(res);
+                const { success, result } = res.data;
+                if (success) {
+                    alert('등록되었습니다');
+                    document.location.href = `/post/${result}`;
+                }
+            }
+        </script>
+    </body>
+</html>
