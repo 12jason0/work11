@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>파일 업로드 aws</h1>
+        <!-- <form>
+            <input type="file" id="files" multiple /><br />
+            <button type="button" onclick="upload()">업로드</button>
+        </form> -->
+        <form onsubmit="upload(event)">
+            <input type="file" id="files" multiple /><br />
+            <button type="submit">업로드</button>
+        </form>
+        <br />
+        <div class="result"></div>
+        <script>
+            const resultBox = document.querySelector('.result');
+            async function upload(e) {
+                e.preventDefault();
+                //파일에 접근
+                const file = document.querySelector('#files');
+                console.log(file.files);
+                //폼 데이터 생성
+                const formData = new FormData();
+                //파일 여러개 임으로 반복문 사용
+                for (let i = 0; i < file.files.length; i++) {
+                    formData.append('files', file.files[i]);
+                }
+
+                const res = await axios({
+                    method: 'POST',
+                    url: '/upload',
+                    data: formData,
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                });
+                console.log('res', res);
+                res.data.forEach((value) => {
+                    const img = document.createElement('img');
+                    img.src = value.location; //aws는 location에 담겨있다
+                    img.style.width = '300px';
+                    resultBox.append(img);
+                });
+            }
+        </script>
+    </body>
+</html>
