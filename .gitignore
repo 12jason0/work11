@@ -1,6 +1,0 @@
-*.git
-*node_modules
-*package-lock.json
-*.env
-my_server_key
-*package.json
