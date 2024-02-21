@@ -9,8 +9,8 @@ const PORT = 8000;
 
 //aws 설정
 aws.config.update({
-    accessKeyId: 'AKIA3FLDXCTEGJQKVQPH', //엑세스 키
-    secretAccessKey: 'UxQH0Ea5RfuDIEqUk22JfI7BliUcQJDj2bp8bGAb', //엑세스키 비밀번호
+    accessKeyId: '', //엑세스 키
+    secretAccessKey: '', //엑세스키 비밀번호
     region: 'ap-northeast-2', //지역 (버킷에 있음)
 });
 
