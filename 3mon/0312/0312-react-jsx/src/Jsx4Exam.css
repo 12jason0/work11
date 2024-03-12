@@ -1,0 +1,13 @@
+h2 {
+  background-color: orange;
+  width: 40%;
+  text-align: center;
+}
+.main {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
