@@ -63,6 +63,14 @@ export default function LifeCycleExam() {
     return () => clearTimeout(timer);
   }, []);
 
+  // getPosts 함수를 만든 이유는
+  // useEffect를 사용 할 때에는 비동기 작업을 함수로 래핑한 다음 useEffect 콜백에서 호출
+  /**
+   * 지원 안함
+   * useEffect(async () => {
+   *      cosnt res = await awios.get('https://jsonplaceholder.typicode.com/posts')
+   *   })
+   */
   return (
     <div>
       {fakePosts.length === 0 ? (
