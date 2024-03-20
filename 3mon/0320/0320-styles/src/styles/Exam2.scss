@@ -1,0 +1,49 @@
+$color-id: rgb(224 243 251);
+$color-blue: darkblue;
+$color-gray: gray;
+
+@mixin div() {
+  width: 500px;
+  height: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  top: 100px;
+  position: relative;
+  left: 200px;
+  border-radius: 10px;
+  background-color: $color-id;
+  padding: 20px;
+  box-shadow: 0 4px 4px -4px black;
+}
+@mixin id() {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+@mixin body() {
+  padding-top: 20px;
+}
+@mixin title() {
+  color: $color-gray;
+  padding-left: 8px;
+}
+
+.div {
+  @include div();
+}
+.id {
+  font-size: small;
+  color: $color-blue;
+  @include id();
+}
+.title {
+  @include title();
+}
+
+.body {
+  @include body();
+  font-size: medium;
+}
