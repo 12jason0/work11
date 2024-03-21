@@ -1,0 +1,14 @@
+$color-header: beige;
+
+.con {
+  margin: 0;
+  padding: 0;
+  background-color: $color-header;
+}
+
+ul {
+  display: flex;
+}
+li {
+  padding: 40px;
+}
