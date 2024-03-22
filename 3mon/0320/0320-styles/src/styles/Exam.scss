@@ -1,0 +1,67 @@
+@import './utilsExam.scss';
+
+$color-white: white;
+$color-black: black;
+
+.larva {
+  position: relative;
+  left: 10px;
+
+  .body {
+    @include body(100px);
+
+    &.body1 {
+      background-color: rgb(0, 0, 166);
+      top: 100px;
+      left: 100px;
+
+      .eye-white {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        top: 10px;
+        left: 10px;
+        z-index: 50;
+        background-color: $color-white;
+      }
+      .eye-black {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        top: 5px;
+        left: 4px;
+        z-index: 51;
+        background-color: $color-black;
+      }
+    }
+    &.body2 {
+      background-color: rgb(36, 61, 206);
+      top: 150px;
+      left: 160px;
+    }
+    &.body3 {
+      background-color: rgb(52, 118, 231);
+      top: 190px;
+      left: 200px;
+    }
+    &.body4 {
+      top: 240px;
+      left: 220px;
+      background-color: rgb(47, 146, 233);
+    }
+    &.body5 {
+      background-color: rgb(140, 191, 253);
+      top: 280px;
+      left: 280px;
+      z-index: 10;
+    }
+  }
+}
+.grass {
+  position: absolute;
+  top: 260px;
+  left: 10px;
+  z-index: 50;
+}

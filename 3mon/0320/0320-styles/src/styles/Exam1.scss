@@ -1,0 +1,47 @@
+$color-pink: pink;
+$color-yellow: yellow;
+$color-green: green;
+
+//--range : 사용자가 지저한 최소 변수
+
+@mixin circle($color, $range) {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $color;
+  --range: #{$range};
+  position: relative;
+  animation: move 2s ease-in-out 0s infinite;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: var(--range);
+  }
+  50% {
+    top: var(--range);
+    left: var(--range);
+  }
+  75% {
+    top: var(--range);
+    left: 0;
+  }
+}
+
+.pink {
+  @include circle($color-pink, 10px);
+}
+
+.yellow {
+  @include circle($color-yellow, 20px);
+}
+
+.green {
+  @include circle($color-green, 30px);
+}
